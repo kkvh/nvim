@@ -48,6 +48,15 @@ require('mason-lspconfig').setup({
           }
         }
       })
+    end,
+    ['lua_ls'] = function ()
+        lspconfig.lua_ls.setup({
+        settings = {
+          Lua = {
+            diagnostics = { globals = {'vim'}}
+          }
+        }
+      })
     end
   }
 })
