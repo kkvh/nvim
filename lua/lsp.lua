@@ -33,8 +33,8 @@ require('mason-lspconfig').setup({
     'eslint',
     'html',
     'cssls',
-	'gopls',
-	'lua_ls',
+    'gopls',
+    'lua_ls',
   },
   handlers = {
     function(server)
