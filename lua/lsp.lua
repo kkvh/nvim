@@ -53,9 +53,10 @@ require('mason-lspconfig').setup({
 })
 
 -- mappings
-vim.api.nvim_create_autocmd('User', {
-  pattern = 'LspAttached',
-  group = group,
+local lsp_cmds = vim.api.nvim_create_augroup('lsp_cmds', {clear = true})
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = lsp_cmds,
   desc = 'LSP actions',
   callback = function()
     local bufmap = function(mode, lhs, rhs)
@@ -66,9 +67,9 @@ vim.api.nvim_create_autocmd('User', {
     -- You can search each function in the help page.
     -- For example :help vim.lsp.buf.hover()
 
-    -- bufmap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
+    bufmap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
     bufmap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
-    -- bufmap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+    bufmap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
     bufmap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
     bufmap('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
     bufmap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
@@ -76,8 +77,8 @@ vim.api.nvim_create_autocmd('User', {
     -- bufmap('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')
     -- bufmap('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
     -- bufmap('x', '<F4>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
-    -- bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
-    -- bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
-    -- bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+    bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
+    bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+    bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
   end
 })
