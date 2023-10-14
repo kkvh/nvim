@@ -36,6 +36,7 @@ require('mason-lspconfig').setup({
     'cssls',
     'gopls',
     'lua_ls',
+    'svelte',
   },
   handlers = {
     function(server)
