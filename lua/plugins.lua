@@ -34,6 +34,7 @@ require('lazy').setup({
   {'williamboman/mason.nvim'},           -- Installer for external tools
   {'williamboman/mason-lspconfig.nvim'}, -- mason extension for lspconfig
   {'hrsh7th/nvim-cmp'},                  -- Autocomplete engine
+  {'hrsh7th/cmp-buffer'},                -- Completion source for buffer
   {'hrsh7th/cmp-nvim-lsp'},              -- Completion source for LSP
   {'L3MON4D3/LuaSnip'},                  -- Snippet engine
   {'tpope/vim-surround'},

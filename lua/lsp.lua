@@ -3,6 +3,7 @@ local luasnip = require('luasnip')
 
 cmp.setup({
   sources = {
+    {name = 'buffer'},
     {name = 'nvim_lsp'}
   },
   mapping = cmp.mapping.preset.insert({
