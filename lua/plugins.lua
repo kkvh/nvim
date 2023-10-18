@@ -43,7 +43,11 @@ require('lazy').setup({
   {'kkvh/vim-docker-tools'},
   {
     'prettier/vim-prettier',
-	build = 'npm install'
+    build = 'npm install'
+  },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate'
   },
   {'rebelot/kanagawa.nvim'},
 })
