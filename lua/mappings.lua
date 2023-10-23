@@ -28,4 +28,14 @@ else
 		tnoremap <silent> <A-Right> <C-W>l
 	endif
 endif
+
+"Quick diff toggle
+nnoremap <F10> :call DiffToggle()<CR>
+function! DiffToggle()
+	if &diff
+		silent diffoff!
+	else
+		silent diffthis
+	endif
+endfunction
 ]])
