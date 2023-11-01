@@ -49,6 +49,17 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate'
   },
+  {
+    'stevearc/aerial.nvim',              -- Code outline
+    opts = {},
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons'
+    },
+    keys = {
+      {'<F6>', '<CMD>AerialToggle left<CR>'}
+    }
+  },
   {'rebelot/kanagawa.nvim'},
 })
 
